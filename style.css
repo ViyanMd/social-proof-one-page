@@ -39,11 +39,11 @@ body {
   align-items: baseline;
   color: var(--dark-greyish-magneta);
   font-size: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .presentation > * {
-  flex-basis: 100%;
+  width: 100%;
 }
 
 .presentation h1 {
@@ -58,13 +58,17 @@ body {
   .presentation {
     flex-direction: column;
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 4rem;
     align-items: flex-start;
   }
 
   .presentation h1 {
     font-size: 2rem;
   }
+}
+
+.title {
+  margin-bottom: 2rem;
 }
 
 .title p {
