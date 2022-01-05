@@ -1,8 +1,20 @@
+:root {
+  font-size: 62.5%;
+  --very-dark-magneta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+  --dark-greyish-magneta: hsl(303, 10%, 53%);
+  --light-greyish-magneta: hsl(300, 24%, 96%);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Spartan";
+}
+
 html,
 body {
-  height: 100%;
-  font-family: "Spartan";
-  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
 }
 
 body {
@@ -14,164 +26,194 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  --very-dark-magneta: hsl(300, 43%, 22%);
-  --soft-pink: hsl(333, 80%, 67%);
-  --dark-greyish-magneta: hsl(303, 10%, 53%);
-  --light-greyish-magneta: hsl(300, 24%, 96%);
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1010px) {
+  html,body {
+    height: max-content;
+  }
   body {
-    align-items: flex-start;
     background-image: url("images/bg-pattern-top-mobile.svg"),
       url("images/bg-pattern-bottom-mobile.svg");
     background-size: 100% 20%;
+    padding: 8rem 1rem;
   }
 }
 
-.wrapper {
-  width: min(90%, 65rem);
-  height: fit-content;
+.sp_lp {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: min(111rem, 100%);
+  padding: 2rem;
 }
 
 .presentation {
   display: flex;
-  align-items: baseline;
+  justify-content: space-between;
   color: var(--dark-greyish-magneta);
   font-size: 1rem;
   margin-bottom: 2rem;
 }
 
 .presentation > * {
-  width: 100%;
-}
-
-.presentation h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--very-dark-magneta);
-  margin-bottom: 1rem;
-  line-height: 3rem;
-}
-
-@media screen and (max-width: 1100px) {
-  .presentation {
-    flex-direction: column;
-    text-align: center;
-    margin-top: 4rem;
-    align-items: flex-start;
-  }
-
-  .presentation h1 {
-    font-size: 2rem;
-  }
+  flex-basis: 100%;
 }
 
 .title {
+  text-align: left;
+}
+
+.title_header {
+  font-size: 4.8rem;
+  font-weight: 700;
+  color: var(--very-dark-magneta);
+  line-height: 1;
+  margin-top: 0;
   margin-bottom: 2rem;
 }
 
-.title p {
-  line-height: 1.7rem;
+.title_text {
+  max-width: 38ch;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
 }
 
 .ratings {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  height: 23.5rem;
+  justify-content: space-between;
+  padding: 1.5rem 0;
 }
 
-.rated {
+.ratings_cat {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 44.5rem;
+  padding: 1.2em 2.2em;
   color: var(--very-dark-magneta);
   background-color: var(--light-greyish-magneta);
   border-radius: 8px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  padding: 0.5rem 2rem 0.5rem 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 
-@media screen and (max-width: 1100px) {
-  .ratings {
-    justify-items: center;
-  }
-  .rated {
-    margin-bottom: 1rem;
-    flex-direction: column;
-  }
+.ratings_cat img {
+  vertical-align: middle;
+  object-fit: cover;
+  max-width: 1.66rem;
+  max-height: 1.57rem;
+  border-radius: 50%;
 }
 
-.rated p {
-  margin-left: 2rem;
+.stars {
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 30%;
+}
+
+.ratings_cat p {
+  flex-basis: 60%;
+  line-height: 0;
+  min-width: 20ch;
 }
 
 #reviews {
-  margin-right: 6rem;
-  margin-left: 1rem;
+  transform: translateX(-96px);
 }
 
 #report-guru {
-  margin-right: 3rem;
-  margin-left: 4rem;
+  transform: translateX(-48px);
 }
 
-#besttech {
-  margin-left: 8rem;
-}
-
-@media screen and (max-width: 1100px) {
-  .rated p {
-    margin: 0;
-    margin-top: 0.8rem;
+@media screen and (max-width: 1010px) {
+  .sp_lp {
+    padding: 0;
+    gap: 12rem;
   }
 
-  #reviews,
-  #report-guru,
-  #besttech {
-    margin-left: 0;
-    margin-right: 0;
+  .presentation {
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    gap: 2rem;
   }
 
-  .stars > * + * {
-    margin-left: 10px;
+  .presentation > * {
+    flex-basis: 100px;
+  }
+
+  .title {
+    max-width: 33rem;
+  }
+
+  .title_header,
+  .title_text {
+    text-align: center;
+  }
+
+  .title_header {
+    font-size: 3.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .title_text {
+    letter-spacing: -0.5px;
+    font-size: 1.5rem;
+  }
+
+  .ratings {
+      align-items: center;
+      gap: 2rem;
+  }
+
+  .ratings_cat {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 33rem;
+    text-align: center;
+  }
+
+  .stars {
+    gap: 1rem;
+  }
+
+  #reviews {
+    transform: translateX(0);
+  }
+  
+  #report-guru {
+    transform: translateX(0);
   }
 }
 
 .reviews {
   display: flex;
-  flex-flow: row wrap;
   justify-content: space-between;
+  gap: 3rem;
 }
 
 .reviews > * {
-  flex-basis: calc(100 / 3);
-}
-
-.reviews > * + * {
-  margin-left: 1.5rem;
+  flex-basis: 100%;
 }
 
 .customer-review {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
   min-width: 10rem;
   color: hsl(0, 0%, 100%);
   background-color: var(--very-dark-magneta);
   font-size: 0.7rem;
   line-height: 1.3rem;
-  padding: 2rem 2rem;
+  padding: 2rem 3rem;
   border-radius: 7px;
-}
-
-.customer-review span {
-  font-weight: 400;
-  color: var(--soft-pink);
-}
-
-.customer-review p {
-  font-weight: 400;
-  font-size: 0.7rem;
-  line-height: 1.4rem;
 }
 
 .customer-card {
@@ -179,40 +221,47 @@ body {
   align-items: center;
 }
 
-.customer {
-  margin-left: 1.5rem;
-  font-weight: 500;
-}
-
-img {
-  vertical-align: middle;
-  max-width: 15%;
+.customer-card img {
+  margin-right: 2rem;
   border-radius: 50%;
+  max-width: 4rem;
+  max-height: 4rem;
 }
 
-@media screen and (max-width: 1100px) {
-  img {
-    max-width: 20%;
-  }
+.customer-review p {
+  max-width: 27ch;
+  font-size: 1.3rem;
+  line-height: 2.2rem;
 }
 
-#review-one {
-  margin-bottom: 2rem;
+.customer {
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.customer-review span {
+  opacity: 0.8;
+  margin-top: 2rem;
+  font-weight: 400;
+  color: var(--soft-pink);
 }
 
 #review-two {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-#review-three {
-  margin-top: 2rem;
+  transform: translateY(1.6rem);
 }
 
-@media screen and (max-width: 1100px) {
-  #review-one,
-  #review-two,
-  #review-three {
-    margin: 0;
-    margin-bottom: 1rem;
+#review-three {
+  transform: translateY(3.2rem);
+}
+
+@media screen and (max-width: 1010px) {
+  .reviews {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .customer-review {
+    max-width: 33rem;
   }
 }
