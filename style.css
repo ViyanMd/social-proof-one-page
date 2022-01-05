@@ -232,6 +232,7 @@ body {
   max-width: 27ch;
   font-size: 1.3rem;
   line-height: 2.2rem;
+  font-weight: 500;
 }
 
 .customer {
